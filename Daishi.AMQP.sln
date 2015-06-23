@@ -5,6 +5,14 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.AMQP", "Daishi.AMQP\Daishi.AMQP.csproj", "{96E10007-95A7-4E6A-84FE-6069CB17ED13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.AMQP.ConsoleApp", "Daishi.AMQP.ConsoleApp\Daishi.AMQP.ConsoleApp.csproj", "{D53A978F-5248-41B0-9674-B70CDD4796A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Math", "Daishi.Math\Daishi.Math.csproj", "{B9A80A1D-219B-4D4C-80AC-0330F7AC7A13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Words", "Words\Words.csproj", "{61B13BB8-5D25-4E90-AD75-2AF14A66468B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Microservices", "Daishi.Microservices\Daishi.Microservices.csproj", "{3669A2EE-B037-49CF-879B-C00D6702B979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{96E10007-95A7-4E6A-84FE-6069CB17ED13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96E10007-95A7-4E6A-84FE-6069CB17ED13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96E10007-95A7-4E6A-84FE-6069CB17ED13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53A978F-5248-41B0-9674-B70CDD4796A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53A978F-5248-41B0-9674-B70CDD4796A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53A978F-5248-41B0-9674-B70CDD4796A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53A978F-5248-41B0-9674-B70CDD4796A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A80A1D-219B-4D4C-80AC-0330F7AC7A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A80A1D-219B-4D4C-80AC-0330F7AC7A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A80A1D-219B-4D4C-80AC-0330F7AC7A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A80A1D-219B-4D4C-80AC-0330F7AC7A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B13BB8-5D25-4E90-AD75-2AF14A66468B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B13BB8-5D25-4E90-AD75-2AF14A66468B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B13BB8-5D25-4E90-AD75-2AF14A66468B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B13BB8-5D25-4E90-AD75-2AF14A66468B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3669A2EE-B037-49CF-879B-C00D6702B979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3669A2EE-B037-49CF-879B-C00D6702B979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3669A2EE-B037-49CF-879B-C00D6702B979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3669A2EE-B037-49CF-879B-C00D6702B979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
