@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3669A2EE-B037-49CF-879B-C00D6702B979}</ProjectGuid>
+    <ProjectGuid>{592053E0-890D-4C0F-AE49-7925BCC7CBF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Daishi.Microservices</RootNamespace>
-    <AssemblyName>Daishi.Microservices</AssemblyName>
+    <RootNamespace>Daishi.Words</RootNamespace>
+    <AssemblyName>Daishi.Words</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,36 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Microservice.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleMathMicroservice.cs" />
-    <Compile Include="SimpleMathMicroserviceContainer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SimpleMathMicroserviceContainer.Designer.cs">
-      <DependentUpon>SimpleMathMicroserviceContainer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SimpleWordMicroservice.cs" />
-    <Compile Include="SimpleWordMicroserviceContainer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SimpleWordMicroserviceContainer.Designer.cs">
-      <DependentUpon>SimpleWordMicroserviceContainer.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Daishi.AMQP\Daishi.AMQP.csproj">
-      <Project>{96E10007-95A7-4E6A-84FE-6069CB17ED13}</Project>
-      <Name>Daishi.AMQP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Daishi.Math\Daishi.Math.csproj">
-      <Project>{b9a80a1d-219b-4d4c-80ac-0330f7ac7a13}</Project>
-      <Name>Daishi.Math</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Daishi.Words\Daishi.Words.csproj">
-      <Project>{592053e0-890d-4c0f-ae49-7925bcc7cbf9}</Project>
-      <Name>Daishi.Words</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

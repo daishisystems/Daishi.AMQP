@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Words")]
+[assembly: AssemblyTitle("Daishi.Words")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Words")]
+[assembly: AssemblyProduct("Daishi.Words")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("b6da6799-cb89-4319-a6b9-79a36d7f1494")]
+[assembly: Guid("271f704e-6541-49dc-93b9-97f15b34ea65")]
 
 // Version information for an assembly consists of the following four values:
 //

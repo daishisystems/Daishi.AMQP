@@ -13,7 +13,7 @@ namespace Daishi.AMQP.ConsoleApp {
             adapter.Init("hostName", 1234, "userName", "password", 50);
             adapter.Connect();
 
-            var message = "Hello, World!";
+            const string message = "Hello, World!";
             adapter.Publish(message, "queueName");
 
             string output;
