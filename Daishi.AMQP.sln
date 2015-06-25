@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Words", "Daishi.Word
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.UnitTests", "Daishi.UnitTests\Daishi.UnitTests.csproj", "{828DEDF2-6B24-4D60-963F-146E6DCBBED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Client", "Daishi.Client\Daishi.Client.csproj", "{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{828DEDF2-6B24-4D60-963F-146E6DCBBED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{828DEDF2-6B24-4D60-963F-146E6DCBBED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{828DEDF2-6B24-4D60-963F-146E6DCBBED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

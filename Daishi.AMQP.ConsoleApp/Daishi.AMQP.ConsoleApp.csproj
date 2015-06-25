@@ -57,6 +57,10 @@
       <Project>{96E10007-95A7-4E6A-84FE-6069CB17ED13}</Project>
       <Name>Daishi.AMQP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Daishi.Client\Daishi.Client.csproj">
+      <Project>{df1a91d6-6670-4f02-8727-1e8c44b60ca1}</Project>
+      <Name>Daishi.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
