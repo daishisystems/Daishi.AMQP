@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.UnitTests", "Daishi.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Client", "Daishi.Client\Daishi.Client.csproj", "{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daishi.Microservices.TestHarness", "Daishi.Microservices.TestHarness\Daishi.Microservices.TestHarness.csproj", "{EF70E6AD-06C0-487F-9336-E0445E7D99BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1A91D6-6670-4F02-8727-1E8C44B60CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF70E6AD-06C0-487F-9336-E0445E7D99BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF70E6AD-06C0-487F-9336-E0445E7D99BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF70E6AD-06C0-487F-9336-E0445E7D99BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF70E6AD-06C0-487F-9336-E0445E7D99BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,3 +40,6 @@ namespace Daishi.Microservices {
         }
     }
 }
+
+/*todo: All logic is now covered from a UT perspective. All that remains is
+  to implement a Test Harness. Remember to push this to Vlad.*/
