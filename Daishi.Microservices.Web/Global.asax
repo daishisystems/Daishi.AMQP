@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Daishi.Microservices.Web.WebApiApplication" Language="C#" %>

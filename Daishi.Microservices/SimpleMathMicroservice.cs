@@ -13,9 +13,9 @@ namespace Daishi.Microservices {
 
         public void Init() {
             _adapter = RabbitMQAdapter.Instance;
-            _adapter.Init("hostName", 1234, "userName", "password", 50);
+            _adapter.Init("localhost", 5672, "guest", "guest", 50);
 
-            _rabbitMQConsumerCatchAll = new RabbitMQConsumerCatchAll("queueName", 10);
+            _rabbitMQConsumerCatchAll = new RabbitMQConsumerCatchAll("Math", 10);
             _rabbitMQConsumerCatchAll.MessageReceived += OnMessageReceived;
 
             _adapter.Connect();
@@ -26,7 +26,7 @@ namespace Daishi.Microservices {
             var input = Convert.ToInt32(e.Message);
             var result = Functions.Double(input);
 
-            Console.WriteLine(result);
+            _adapter.Publish(result.ToString(), "MathResponse");
         }
 
         public void Shutdown() {

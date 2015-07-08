@@ -72,6 +72,7 @@
     <Compile Include="PercentageChangeCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueLengthIncreasedAMQPQueueMetricAnalyser.cs" />
+    <Compile Include="QueuePool.cs" />
     <Compile Include="QueueWatch.cs" />
     <Compile Include="RabbitMQAdapter.cs" />
     <Compile Include="RabbitMQAuthorizationHeader.cs" />

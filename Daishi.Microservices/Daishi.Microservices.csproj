@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client, Version=3.5.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.3.5.3\lib\net40\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
@@ -59,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Daishi.AMQP\Daishi.AMQP.csproj">
-      <Project>{96E10007-95A7-4E6A-84FE-6069CB17ED13}</Project>
+      <Project>{96e10007-95a7-4e6a-84fe-6069cb17ed13}</Project>
       <Name>Daishi.AMQP</Name>
     </ProjectReference>
     <ProjectReference Include="..\Daishi.Math\Daishi.Math.csproj">
@@ -70,6 +74,9 @@
       <Project>{592053e0-890d-4c0f-ae49-7925bcc7cbf9}</Project>
       <Name>Daishi.Words</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
