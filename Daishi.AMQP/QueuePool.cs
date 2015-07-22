@@ -16,7 +16,7 @@ namespace Daishi.AMQP {
         private readonly Func<AMQPQueue> _amqpQueueGenerator;
         private readonly ConcurrentBag<AMQPQueue> _amqpQueues;
 
-        static QueuePool() {}
+        static QueuePool() {} // todo: Load Queues on start-up.
 
         public static QueuePool Instance { get { return _instance; } }
 

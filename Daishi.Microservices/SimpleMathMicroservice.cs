@@ -23,10 +23,13 @@ namespace Daishi.Microservices {
         }
 
         public void OnMessageReceived(object sender, MessageReceivedEventArgs e) {
-            var input = Convert.ToInt32(e.Message);
-            var result = Functions.Double(input);
+            var paramaters = e.Message.Split(',');
 
-            _adapter.Publish(result.ToString(), "MathResponse");
+            var number = Convert.ToInt32(paramaters[0]);
+            var result = Functions.Double(number);
+
+            var queueName = paramaters[1];
+            _adapter.Publish(result.ToString(), queueName);
         }
 
         public void Shutdown() {

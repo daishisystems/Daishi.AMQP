@@ -9,12 +9,16 @@ using RabbitMQ.Client.Events;
 
 namespace Daishi.Microservices.Web.Controllers {
     public class MathController : ApiController {
-        public string Get(int id) {
-            RabbitMQAdapter.Instance.Publish(id.ToString(), "Math");
+        [Route("api/math/{number}")]
+        public string Get(int number) {
+            var queue = QueuePool.Instance.Get();
+            RabbitMQAdapter.Instance.Publish(string.Concat(number, ",", queue.Name), "Math");
 
             string message;
             BasicDeliverEventArgs args;
-            var responded = RabbitMQAdapter.Instance.TryGetNextMessage("MathResponse", out message, out args, 5000);
+
+            var responded = RabbitMQAdapter.Instance.TryGetNextMessage(queue.Name, out message, out args, 5000);
+            QueuePool.Instance.Put(queue);
 
             if (responded) {
                 return message;
