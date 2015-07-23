@@ -1,13 +1,10 @@
-@using Daishi.Microservices.Web.Areas.HelpPage
-@model InvalidSample
+@model Daishi.Microservices.Web.Areas.HelpPage.InvalidSample
 
-@if (HttpContext.Current.IsDebuggingEnabled)
-{
+@if (HttpContext.Current.IsDebuggingEnabled) {
     <div class="warning-message-container">
         <p>@Model.ErrorMessage</p>
     </div>
 }
-else
-{
+else {
     <p>Sample not available.</p>
 }

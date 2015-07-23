@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+#region Includes
+
 using System.Collections.ObjectModel;
 
-namespace Daishi.Microservices.Web.Areas.HelpPage.ModelDescriptions
-{
-    public class EnumTypeModelDescription : ModelDescription
-    {
-        public EnumTypeModelDescription()
-        {
+#endregion
+
+namespace Daishi.Microservices.Web.Areas.HelpPage.ModelDescriptions {
+    public class EnumTypeModelDescription : ModelDescription {
+        public EnumTypeModelDescription() {
             Values = new Collection<EnumValueDescription>();
         }
 

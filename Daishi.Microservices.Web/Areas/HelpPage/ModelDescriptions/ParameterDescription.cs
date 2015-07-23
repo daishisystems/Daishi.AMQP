@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+#region Includes
+
 using System.Collections.ObjectModel;
 
-namespace Daishi.Microservices.Web.Areas.HelpPage.ModelDescriptions
-{
-    public class ParameterDescription
-    {
-        public ParameterDescription()
-        {
+#endregion
+
+namespace Daishi.Microservices.Web.Areas.HelpPage.ModelDescriptions {
+    public class ParameterDescription {
+        public ParameterDescription() {
             Annotations = new Collection<ParameterAnnotation>();
         }
 

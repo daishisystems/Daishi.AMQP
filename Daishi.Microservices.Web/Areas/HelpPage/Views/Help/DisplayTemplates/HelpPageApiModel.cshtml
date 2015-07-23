@@ -1,8 +1,5 @@
-@using System.Web.Http
 @using System.Web.Http.Description
-@using Daishi.Microservices.Web.Areas.HelpPage.Models
-@using Daishi.Microservices.Web.Areas.HelpPage.ModelDescriptions
-@model HelpPageApiModel
+@model Daishi.Microservices.Web.Areas.HelpPage.Models.HelpPageApiModel
 
 @{
     ApiDescription description = Model.ApiDescription;
@@ -20,21 +17,17 @@
 
     <p>@Model.RequestDocumentation</p>
 
-    @if (Model.RequestModelDescription != null)
-    {
-        @Html.DisplayFor(m => m.RequestModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.RequestModelDescription })
-        if (Model.RequestBodyParameters != null)
-        {
+    @if (Model.RequestModelDescription != null) {
+        @Html.DisplayFor(m => m.RequestModelDescription.ModelType, "ModelDescriptionLink", new {modelDescription = Model.RequestModelDescription})
+        if (Model.RequestBodyParameters != null) {
             @Html.DisplayFor(m => m.RequestBodyParameters, "Parameters")
         }
     }
-    else
-    {
+    else {
         <p>None.</p>
     }
 
-    @if (Model.SampleRequests.Count > 0)
-    {
+    @if (Model.SampleRequests.Count > 0) {
         <h3>Request Formats</h3>
         @Html.DisplayFor(m => m.SampleRequests, "Samples")
     }
@@ -45,21 +38,17 @@
 
     <p>@description.ResponseDescription.Documentation</p>
 
-    @if (Model.ResourceDescription != null)
-    {
-        @Html.DisplayFor(m => m.ResourceDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.ResourceDescription })
-        if (Model.ResourceProperties != null)
-        {
+    @if (Model.ResourceDescription != null) {
+        @Html.DisplayFor(m => m.ResourceDescription.ModelType, "ModelDescriptionLink", new {modelDescription = Model.ResourceDescription})
+        if (Model.ResourceProperties != null) {
             @Html.DisplayFor(m => m.ResourceProperties, "Parameters")
         }
     }
-    else
-    {
+    else {
         <p>None.</p>
     }
 
-    @if (Model.SampleResponses.Count > 0)
-    {
+    @if (Model.SampleResponses.Count > 0) {
         <h3>Response Formats</h3>
         @Html.DisplayFor(m => m.SampleResponses, "Samples")
     }
