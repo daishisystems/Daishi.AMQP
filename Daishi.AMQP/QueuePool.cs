@@ -16,13 +16,25 @@ namespace Daishi.AMQP {
         private readonly Func<AMQPQueue> _amqpQueueGenerator;
         private readonly ConcurrentBag<AMQPQueue> _amqpQueues;
 
-        static QueuePool() {} // todo: Load Queues on start-up.
+        static QueuePool() {}
 
         public static QueuePool Instance { get { return _instance; } }
 
         private QueuePool(Func<AMQPQueue> amqpQueueGenerator) {
             _amqpQueueGenerator = amqpQueueGenerator;
             _amqpQueues = new ConcurrentBag<AMQPQueue>();
+
+            var manager = new RabbitMQQueueMetricsManager(false, "localhost", 15672, "paul", "password");
+            var queueMetrics = manager.GetAMQPQueueMetrics();
+
+            foreach (var queueMetric in queueMetrics.Values) {
+                Guid queueName;
+                var isGuid = Guid.TryParse(queueMetric.QueueName, out queueName);
+
+                if (isGuid) {
+                    _amqpQueues.Add(new RabbitMQQueue {IsNew = false, Name = queueName.ToString()});
+                }
+            }
         }
 
         public AMQPQueue Get() {
