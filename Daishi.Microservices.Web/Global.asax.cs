@@ -1,5 +1,6 @@
 ﻿#region Includes
 
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -11,7 +12,7 @@ using Daishi.AMQP;
 
 namespace Daishi.Microservices.Web {
     public class WebApiApplication : HttpApplication {
-        private SimpleMathMicroservice _simpleMathMicroservice;
+        private readonly List<SimpleMathMicroservice> _simpleMathMicroservices = new List<SimpleMathMicroservice>();
 
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
@@ -22,8 +23,12 @@ namespace Daishi.Microservices.Web {
 
             # region Microservice Init
 
-            _simpleMathMicroservice = new SimpleMathMicroservice();
-            _simpleMathMicroservice.Init();
+            for (var i = 0; i < 10; i++) {
+                var simpleMathMicroservice = new SimpleMathMicroservice();
+                _simpleMathMicroservices.Add(simpleMathMicroservice);
+
+                simpleMathMicroservice.Init();
+            }
 
             #endregion
 
@@ -36,8 +41,8 @@ namespace Daishi.Microservices.Web {
         }
 
         protected void Application_End() {
-            if (_simpleMathMicroservice != null) {
-                _simpleMathMicroservice.Shutdown();
+            foreach (var simpleMathMicroservice in _simpleMathMicroservices) {
+                simpleMathMicroservice.Shutdown();
             }
 
             if (RabbitMQAdapter.Instance != null && RabbitMQAdapter.Instance.IsConnected) {

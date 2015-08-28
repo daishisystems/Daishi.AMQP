@@ -44,7 +44,7 @@ namespace Daishi.AMQP {
 
             var thread = new Thread(o => consumer.Start(this));
             thread.Start();
-
+            
             while (!thread.IsAlive)
                 Thread.Sleep(1);
         }
