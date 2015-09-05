@@ -46,6 +46,13 @@
   <ItemGroup>
     <Compile Include="Microservice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueWatchMicroservice.cs" />
+    <Compile Include="QueueWatchMicroserviceContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QueueWatchMicroserviceContainer.Designer.cs">
+      <DependentUpon>QueueWatchMicroserviceContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimpleMathMicroservice.cs" />
     <Compile Include="SimpleMathMicroserviceContainer.cs">
       <SubType>Component</SubType>

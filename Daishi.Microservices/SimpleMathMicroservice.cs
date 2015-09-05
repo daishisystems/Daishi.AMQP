@@ -10,6 +10,7 @@ namespace Daishi.Microservices {
     public class SimpleMathMicroservice : Microservice {
         private RabbitMQAdapter _adapter;
         private RabbitMQConsumerCatchAll _rabbitMQConsumerCatchAll;
+        private RabbitMQConsumerCatchAll _autoScaleConsumerCatchAll;
 
         public void Init() {
             _adapter = RabbitMQAdapter.Instance;
@@ -18,8 +19,17 @@ namespace Daishi.Microservices {
             _rabbitMQConsumerCatchAll = new RabbitMQConsumerCatchAll("Math", 10);
             _rabbitMQConsumerCatchAll.MessageReceived += OnMessageReceived;
 
+            _autoScaleConsumerCatchAll = new RabbitMQConsumerCatchAll("AutoScale", 10);
+            _autoScaleConsumerCatchAll.MessageReceived += _autoScaleConsumerCatchAll_MessageReceived;
+
             _adapter.Connect();
+            _adapter.ConsumeAsync(_autoScaleConsumerCatchAll);
             _adapter.ConsumeAsync(_rabbitMQConsumerCatchAll);
+        }
+
+        void _autoScaleConsumerCatchAll_MessageReceived(object sender, MessageReceivedEventArgs e)
+        {
+            Console.WriteLine("I need to scale out!"); // todo: Add another consumer...
         }
 
         public void OnMessageReceived(object sender, MessageReceivedEventArgs e) {
