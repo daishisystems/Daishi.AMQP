@@ -9,8 +9,7 @@ using Daishi.AMQP;
 
 namespace Daishi.Microservices {
     public class QueueWatchMicroservice : Microservice {
-        private RabbitMQAdapter _adapter;
-        private RabbitMQConsumerCatchAll _rabbitMQConsumerCatchAll;
+        private QueueWatch _queueWatch;
 
         public void Init() {
 
@@ -22,11 +21,12 @@ namespace Daishi.Microservices {
                             new QueueLengthIncreasedAMQPQueueMetricAnalyser(
                                 new ConsumptionRateDecreasedAMQPQueueMetricAnalyser(
                                     new StableAMQPQueueMetricAnalyser()))))), 20);
-            AMQPConsumerNotifier amqpConsumerNotifier = new RabbitMQConsumerNotifier(RabbitMQAdapter.Instance, "monitor");           
-            var queueWatch = new QueueWatch(amqpQueueMetricsManager, amqpQueueMetricsAnalyser, amqpConsumerNotifier, 5000);
-            queueWatch.AMQPQueueMetricsAnalysed += QueueWatchOnAMQPQueueMetricsAnalysed;
+            AMQPConsumerNotifier amqpConsumerNotifier = new RabbitMQConsumerNotifier(RabbitMQAdapter.Instance, "monitor");
+            RabbitMQAdapter.Instance.Init("localhost", 5672, "paul", "password", 50);
+            _queueWatch = new QueueWatch(amqpQueueMetricsManager, amqpQueueMetricsAnalyser, amqpConsumerNotifier, 5000);
+            _queueWatch.AMQPQueueMetricsAnalysed += QueueWatchOnAMQPQueueMetricsAnalysed;
 
-            queueWatch.StartAsync();
+            _queueWatch.StartAsync();
         }
 
         private void QueueWatchOnAMQPQueueMetricsAnalysed(object sender, AMQPQueueMetricsAnalysedEventArgs e) {
@@ -55,7 +55,10 @@ namespace Daishi.Microservices {
         }
 
         public void Shutdown() {
-            throw new NotImplementedException();
+
+            if (_queueWatch != null) {
+                _queueWatch.Stop();
+            }
         }
     }
 }

@@ -18,7 +18,10 @@ namespace Daishi.AMQP {
 
         static QueuePool() {}
 
-        public static QueuePool Instance { get { return _instance; } }
+        public static QueuePool Instance
+        {
+            get { return _instance; }
+        }
 
         private QueuePool(Func<AMQPQueue> amqpQueueGenerator) {
             _amqpQueueGenerator = amqpQueueGenerator;

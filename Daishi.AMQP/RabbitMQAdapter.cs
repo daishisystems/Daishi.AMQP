@@ -14,9 +14,15 @@ namespace Daishi.AMQP {
 
         static RabbitMQAdapter() {}
 
-        public static RabbitMQAdapter Instance { get { return _instance; } }
+        public static RabbitMQAdapter Instance
+        {
+            get { return _instance; }
+        }
 
-        public override bool IsConnected { get { return _connection != null && _connection.IsOpen; } }
+        public override bool IsConnected
+        {
+            get { return _connection != null && _connection.IsOpen; }
+        }
 
         public override AMQPAdapter Init(string hostName, int port, string userName, string password, ushort heartbeat) {
             this.hostName = hostName;

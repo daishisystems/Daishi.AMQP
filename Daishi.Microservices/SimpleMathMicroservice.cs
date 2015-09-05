@@ -1,6 +1,7 @@
 ﻿#region Includes
 
 using System;
+using System.Collections.Generic;
 using Daishi.AMQP;
 using Daishi.Math;
 
@@ -9,6 +10,8 @@ using Daishi.Math;
 namespace Daishi.Microservices {
     public class SimpleMathMicroservice : Microservice {
         private RabbitMQAdapter _adapter;
+        private readonly List<RabbitMQConsumerCatchAll> _consumers = new List<RabbitMQConsumerCatchAll>();
+
         private RabbitMQConsumerCatchAll _rabbitMQConsumerCatchAll;
         private RabbitMQConsumerCatchAll _autoScaleConsumerCatchAll;
 
@@ -22,14 +25,27 @@ namespace Daishi.Microservices {
             _autoScaleConsumerCatchAll = new RabbitMQConsumerCatchAll("AutoScale", 10);
             _autoScaleConsumerCatchAll.MessageReceived += _autoScaleConsumerCatchAll_MessageReceived;
 
+            _consumers.Add(_rabbitMQConsumerCatchAll);
+
             _adapter.Connect();
             _adapter.ConsumeAsync(_autoScaleConsumerCatchAll);
             _adapter.ConsumeAsync(_rabbitMQConsumerCatchAll);
         }
 
-        void _autoScaleConsumerCatchAll_MessageReceived(object sender, MessageReceivedEventArgs e)
-        {
-            Console.WriteLine("I need to scale out!"); // todo: Add another consumer...
+        private void _autoScaleConsumerCatchAll_MessageReceived(object sender, MessageReceivedEventArgs e) {
+
+            if (e.Message.Contains("scale-out")) {
+                var consumer = new RabbitMQConsumerCatchAll("Math", 10);
+                _adapter.ConsumeAsync(consumer);
+                _consumers.Add(consumer);
+            }
+            else {
+                if (_consumers.Count <= 1) return;
+                var lastConsumer = _consumers[_consumers.Count - 1];
+
+                _adapter.StopConsumingAsync(lastConsumer);
+                _consumers.RemoveAt(_consumers.Count - 1);
+            }
         }
 
         public void OnMessageReceived(object sender, MessageReceivedEventArgs e) {
@@ -43,10 +59,14 @@ namespace Daishi.Microservices {
         }
 
         public void Shutdown() {
+
             if (_adapter == null) return;
 
-            if (_rabbitMQConsumerCatchAll != null) {
-                _adapter.StopConsumingAsync(_rabbitMQConsumerCatchAll);
+            if (_consumers != null && _consumers.Count > 0) {
+                foreach (var consumer in _consumers) {
+                    _adapter.StopConsumingAsync(consumer);
+                }
+                _consumers.Clear();
             }
 
             _adapter.Disconnect();

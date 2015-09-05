@@ -16,7 +16,7 @@ namespace Daishi.AMQP.ConsoleApp {
                         new DispatchRateDecreasedAMQPQueueMetricAnalyser(
                             new QueueLengthIncreasedAMQPQueueMetricAnalyser(
                                 new ConsumptionRateDecreasedAMQPQueueMetricAnalyser(
-                                    new StableAMQPQueueMetricAnalyser()))))), 1);
+                                    new StableAMQPQueueMetricAnalyser()))))), 20);
             AMQPConsumerNotifier amqpConsumerNotifier = new RabbitMQConsumerNotifier(RabbitMQAdapter.Instance, "monitor");
             RabbitMQAdapter.Instance.Init("localhost", 5672, "paul", "password", 50);
             var queueWatch = new QueueWatch(amqpQueueMetricsManager, amqpQueueMetricsAnalyser, amqpConsumerNotifier, 5000);
