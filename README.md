@@ -10,3 +10,9 @@ As seen on <a href="https://visualstudiomagazine.com/articles/2015/09/30/microse
 
 Click <a href="http://insidethecpu.com/2015/05/22/microservices-with-c-and-rabbitmq/">here for an in-depth tutorial</a> on building Microservices using this framework.
 <a href="http://insidethecpu.com/2015/05/22/microservices-with-c-and-rabbitmq/">![Image of Microservices as Gears](https://dl.dropboxusercontent.com/u/26042707/daishi.amqp.jpg)</a>
+
+## Contact the Developer
+Please reach out and contact me for questions, suggestions, or to just talk tech in general.
+
+
+<a href="http://insidethecpu.com/feed/">![RSS](https://dl.dropboxusercontent.com/u/26042707/rss.png)</a><a href="https://twitter.com/daishisystems">![Twitter](https://dl.dropboxusercontent.com/u/26042707/twitter.png)</a><a href="https://www.linkedin.com/in/daishisystems">![LinkedIn](https://dl.dropboxusercontent.com/u/26042707/linkedin.png)</a><a href="https://plus.google.com/102806071104797194504/posts">![Google+](https://dl.dropboxusercontent.com/u/26042707/g.png)</a><a href="https://www.youtube.com/user/daishisystems">![YouTube](https://dl.dropboxusercontent.com/u/26042707/youtube.png)</a>
