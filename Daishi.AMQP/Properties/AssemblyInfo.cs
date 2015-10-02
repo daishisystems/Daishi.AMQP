@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Daishi.AMQP")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Microservices are groupings of lightweight services, interconnected, although independent of each other, without direct coupling or dependency. Microservices allow flexibility in terms of infrastructure; application traffic is routed to collections of services that may be distributed across CPU, disk, machine and network as opposed to a single monolithic platform designed to manage all traffic.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Daishi.AMQP")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
+[assembly: AssemblyCompany("Paul Mooney")]
+[assembly: AssemblyProduct("Microservices SDK for .NET applications")]
+[assembly: AssemblyCopyright("Copyright © Paul Mooney 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
